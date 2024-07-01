@@ -1,8 +1,10 @@
 package com.hotel.util;
 
-import org.springframework.stereotype.Component;
+import java.util.List;
 
 import com.hotel.DTO.HotelDTO;
+import com.hotel.DTO.HotelDetailsDTO;
+import com.hotel.DTO.RatingDTO;
 import com.hotel.entity.Hotel;
 
 
@@ -23,5 +25,9 @@ public class Converter {
 		entity.setName(dto.getName());
 		entity.setLocation(dto.getLocation());
 		return entity;
+	}
+	
+	public static HotelDetailsDTO hotelWithRatings(HotelDTO hotel, List<RatingDTO> ratings) {
+		return new HotelDetailsDTO(hotel.getId(), hotel.getName(), hotel.getLocation(), hotel.getCreatedDate(), hotel.getUpdatedDate(), ratings);
 	}
 }

@@ -8,15 +8,14 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 @ToString
-public class HotelDTO {
-	
-	private int id;
-	private String name;
-	private String location;
-	private LocalDateTime  createdDate;
-	private LocalDateTime  updatedDate;
+public class RatingDTO {
 
+	private int id;
+	private int star;
+	private String comment;
+	private LocalDateTime date;
+	
 }
